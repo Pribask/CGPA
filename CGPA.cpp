@@ -6,23 +6,31 @@ using namespace std;
 string lower_case_converter(string);
 void gpa_calculator();
 void cgpa_calculator();
+string display_menu();
 
 int main()
 {
     string choice;
-    cout<<"Would you like to calculate you cgpa or gpa? ";
-    cin>>choice;
-    /*Converting user's choice to lower case*/
-    choice=lower_case_converter(choice);
+    
+    do
+    {
+        choice = display_menu();
+        /* Converting user's choice to lower case */
+        choice = lower_case_converter(choice);
 
-    if(choice=="gpa")
-    {
-        gpa_calculator();
-    }
-    else if(choice=="cgpa")
-    {
-        cgpa_calculator();
-    }
+        if (choice == "1"||choice=="gpa")
+        {
+            gpa_calculator();
+        }
+        else if (choice == "2"||choice=="cgpa")
+        {
+            cgpa_calculator();
+        }
+        else if ((choice !="3")&&(choice!="exit"))
+        {
+            cout << "Invalid choice. Please enter a valid option." << endl;
+        }
+    } while (choice != "3" && choice != "exit");
 
     return 0;
 }
@@ -134,4 +142,18 @@ string lower_case_converter(string s)
         }
     }
     return s;
+}
+string display_menu()
+{
+    string choice;
+    cout<<"__________________________________________________\n"<<endl;
+    cout << "\nMenu Options:"<<endl;
+    cout << "1. Calculate GPA"<<endl;
+    cout << "2. Calculate CGPA"<<endl;
+    cout << "3. Exit\n"<<endl;
+    cout << "Enter your choice (1/2/3) OR (gpa/cgpa/exit): ";
+    cin >> choice;
+    cout<<"__________________________________________________"<<endl;
+    cout<<"\n"<<endl;
+    return choice;
 }
