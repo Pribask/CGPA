@@ -1,4 +1,6 @@
-# CGPA-GPA-Calculator
+# CGPA-GPA-Calculator 
+#### Grade Up Your Game! :)
+
 CGPA represents the average of grade points obtained in all courses throughout a program.
 
 ### Objective: 
